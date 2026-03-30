@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    --bg: #e5e5e5;
+    --text: #111111;
+    --line: rgba(0, 0, 0, 0.15);
+    --muted: rgba(0, 0, 0, 0.5);
+  }
+
+  .dark {
+    --bg: #050505;
+    --text: #ffffff;
+    --line: rgba(255, 255, 255, 0.15);
+    --muted: rgba(255, 255, 255, 0.5);
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Subtle noise texture for cinematic feel */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+  }
+}
+
+@layer utilities {
+  .micro-text {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  
+  .massive-text {
+    font-size: clamp(3rem, 12vw, 14rem);
+    line-height: 0.85;
+    letter-spacing: -0.05em;
+    font-weight: 500;
+  }
+
+  .grid-border {
+    border-color: var(--line);
+  }
+}
