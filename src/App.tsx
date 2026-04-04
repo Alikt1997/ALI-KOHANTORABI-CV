@@ -270,7 +270,7 @@ export default function App() {
             </button>
             <button 
               onClick={() => setTheme(isDark ? 'day' : 'dark')}
-              className={`px-3 py-1 border-2 rounded-full transition-colors ${isDark ? 'border-white/20 hover:border-[#FFD700]' : 'border-black/20 hover:border-black'}`}
+              className={`px-3 py-1 border-2 rounded-full transition-colors ${isDark ? 'bg-[#FFD700] border-[#FFD700] text-black hover:bg-white hover:border-white' : 'bg-black border-black text-[#FFD700] hover:bg-black/80 hover:border-black/80'}`}
             >
               {isDark ? '☀️' : '🌙'}
             </button>
